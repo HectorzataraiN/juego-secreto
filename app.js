@@ -53,7 +53,7 @@ function verificarIntento() {
         );
         document.getElementById('reiniciar').removeAttribute('disabled');
         document.getElementById('valorUsuario').setAttribute('disabled', 'true');
-
+        document.querySelector('.chute .container__boton').setAttribute('disabled', 'true'); // ← nuevo
     } else if (intentos >= limite) {
         // Se acabaron los intentos
         actualizarRacha(false);
@@ -64,6 +64,7 @@ function verificarIntento() {
         );
         document.getElementById('reiniciar').removeAttribute('disabled');
         document.getElementById('valorUsuario').setAttribute('disabled', 'true');
+        document.querySelector('.chute .container__boton').setAttribute('disabled', 'true'); // ← nuevo
 
     } else {
         if (Math.abs(numeroDeUsuario - numeroSecreto) <= 3) {
