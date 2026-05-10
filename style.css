@@ -240,3 +240,16 @@ button {
         background-size: cover;
     }
 }
+.container__racha {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff6b6b;
+    text-align: center;
+    animation: pulso 0.4s ease;
+}
+
+@keyframes pulso {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
