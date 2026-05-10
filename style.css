@@ -142,6 +142,15 @@ body::before {
 
     cursor: pointer;
 }
+.texto__intentos {
+    margin-top: 1rem;
+
+    font-size: 1rem;
+
+    opacity: 0.8;
+
+    word-wrap: break-word;
+}
 .container__botones {
     display: flex;
     gap: 2em;

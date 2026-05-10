@@ -2,6 +2,7 @@ let numeroSecreto = 0;
 let intentos = 0;
 let listaNumerosSorteados = [];
 let numeroMaximo = 10;
+let intentosUsuario = [];
 function asignarTextoElemento(elemento, texto) {
 
     let elementoHTML = document.querySelector(elemento);
@@ -22,21 +23,50 @@ function actualizarTextoDificultad() {
 const selectorDificultad = document.getElementById('dificultad');
 
 function verificarIntento() {
-    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
-    
+
+    let numeroDeUsuario =
+        parseInt(document.getElementById('valorUsuario').value);
+
+    intentosUsuario.push(numeroDeUsuario);
+
+    asignarTextoElemento(
+        '.texto__intentos',
+        `Tus números: ${intentosUsuario.join(', ')}`
+    );
+
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
-        document.getElementById('reiniciar').removeAttribute('disabled');
+
+        asignarTextoElemento(
+            '.texto__parrafo',
+            `Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`
+        );
+
+        document
+            .getElementById('reiniciar')
+            .removeAttribute('disabled');
+
     } else {
-        //El usuario no acertó.
+
         if (numeroDeUsuario > numeroSecreto) {
-            asignarTextoElemento('.texto__parrafo','El número secreto es menor');
+
+            asignarTextoElemento(
+                '.texto__parrafo',
+                'El número secreto es menor'
+            );
+
         } else {
-            asignarTextoElemento('.texto__parrafo','El número secreto es mayor');
+
+            asignarTextoElemento(
+                '.texto__parrafo',
+                'El número secreto es mayor'
+            );
         }
+
         intentos++;
+
         limpiarCaja();
     }
+
     return;
 }
 
@@ -64,7 +94,9 @@ function generarNumeroSecreto() {
 }
 
 function condicionesIniciales() {
+    intentosUsuario = [];
 
+    asignarTextoElemento('.texto__intentos', '');
     asignarTextoElemento('h1', 'Juego del número secreto!');
 
     actualizarTextoDificultad();
