@@ -119,6 +119,10 @@ body::before {
     display: block;
     object-fit: contain;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: clam(2rem,5vw,4.5rem);
