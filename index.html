@@ -24,13 +24,33 @@ git push
         <div class="container__contenido">
             <div class="container__informaciones">
                 <div class="container__texto">
-                    <h1></h1>
+                    <h1>Juego del número secreto.</h1>
+                </div>
+
+                <div class="container__dificultad">
+                    <label for="dificultad">Dificultad:</label>
+
+                    <select id="dificultad" class="container__input">
+                        <option value="10">Fácil (1 - 10)</option>
+                        <option value="50">Media (1 - 50)</option>
+                        <option value="100">Difícil (1 - 100)</option>
+                    </select>
+                </div>
+
+                <div class="container__texto">
                     <p class="texto__parrafo"></p>
                 </div>
-                <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
+
+                <input type="number" id="valorUsuario" min="1" class="container__input">
+
                 <div class="chute container__botones">
-                    <button onclick="verificarIntento();" class="container__boton">Intentar</button>
-                    <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>Nuevo juego</button>
+                    <button onclick="verificarIntento();" class="container__boton">
+                        Intentar
+                    </button>
+
+                    <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>
+                        Nuevo juego
+                    </button>
                 </div>
             </div>
             <img src="./img/detective-amongus.webp" alt="Una persona mirando a la izquierda" class="container__imagen-persona" />
