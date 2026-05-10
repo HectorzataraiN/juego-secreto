@@ -115,7 +115,7 @@ function condicionesIniciales() {
 
     // Re-habilitar input por si quedó deshabilitado
     document.getElementById('valorUsuario').removeAttribute('disabled');
-
+    document.querySelector('.chute .container__boton').removeAttribute('disabled'); // ← nuevo
     console.log(numeroSecreto);
 }
 
