@@ -9,8 +9,7 @@ body {
     background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     padding: 1rem;
 }
 
@@ -55,7 +54,7 @@ body::before {
     background-position: center;
 
     position: relative;
-
+    flex: 1;
     overflow: hidden;
 }
 
@@ -188,7 +187,62 @@ button {
     font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 400;
 }
+footer {
+    width: 100%;
 
+    margin-top: 2rem;
+
+    padding: 1.5rem;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+    color: #1875E8;
+}
+
+.footer-copy {
+    margin-bottom: 1rem;
+
+    opacity: 0.8;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background-color: #fff;      /* botón blanco */
+  color: #111;                 /* texto oscuro */
+  padding: 8px 12px;
+  border-radius: 45%;
+
+  text-decoration: none;
+  font-weight: 500;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.footer-social img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footer-social:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 @media (max-width: 768px) {
 
     body {
